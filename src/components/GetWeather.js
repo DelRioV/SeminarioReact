@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getWeather } from '../servicio/API';
 
 export default function GetWeather() {
 
@@ -8,7 +9,7 @@ export default function GetWeather() {
     const onSubmit = async (e) =>
     {
         e.preventDefault();
-        const resultQuery = await GetWeather(latitude,longitud);
+        const resultQuery = await getWeather(latitude,longitud);
         console.log(resultQuery)
         setData(resultQuery.current_weather);
     };
